@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coockies</title>
+</head>
+<body>
+    <div class="container">
+        <label for="name">Your Name</label>
+        <input type="text" id="name">
+        
+        <label for="age">Your Name</label>
+        <input type="number" id="age" class="cookies">
+        <div class="images">
+            <input type="radio" name="gender" id="img1" value="male">
+            <label for="img1">
+                <img src="./10.jpg" alt="img1">
+            </label>
+            <label for="img2">
+                <img src="./20.jpg" alt="img2">
+            </label>
+            <input type="radio" name="gender" id="img2" value="female">
+        </div>
+        <br>
+        <label for="color">Select Your Color</label>
+        <select id="color">
+            <option value="red">Red</option>
+            <option value="green">Green</option>
+            <option value="blue">Blue</option>
+        </select>
+        <br>
+        <button id="register" onclick="getInformation()">Register</button>
+    </div>    
+    <script src="script.js"></script>
+</body>
+</html>
