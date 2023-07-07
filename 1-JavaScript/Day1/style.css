@@ -1,0 +1,26 @@
+.main{
+    text-align: center;
+    margin: 5px;
+}
+.main img{
+    width: 200px;
+    border-radius: 50%;
+}
+.main h2{
+    font-weight: bold;
+    font-size: 30px;
+}
+.main p{
+    font-size: 20px;
+}
+.second{
+    display: flex;
+    justify-content: space-around;
+}
+.one, .two, .three{
+    background-color: lightcoral;
+    padding: 10px;
+    height: 170px;
+    width: 300px;
+    
+}
