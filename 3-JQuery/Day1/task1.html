@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>task1</title>
+    <script src="./code.jquery.com_jquery-3.7.0.min.js"></script>
+</head>
+<body>
+    <input type="text">
+    <button onclick="addName()">Add</button>
+    <!-- <h1 class="text"></h1> -->
+    <ol class="list"></ol>
+
+    <script>
+        $('input').css({
+            'padding': '10px',
+        });
+        $('button').css({
+            'padding': '10px',
+            'cursor': 'pointer',
+            'font-weight': 'bold',
+        });
+        $('.list').css({
+            'font-size': '25px',
+        })
+        function addName(){ 
+            const name = $('input').val();
+            const ele = $('<li>').text(name);
+            $('.list').append(ele);    
+            $('input').val('');
+            const delet = $('<span>').text(' Delete');
+            ele.append(delet);
+            $('.list').on('click', 'li', function(){
+                $(this).remove();
+            })
+            
+            /*
+            const name = $('input').val();
+            const ele = $('<span>').text(name);
+            $('.text').append(ele);
+            $('input').val('');
+            const delet = $('<span>').text(' Delete');
+            ele.append(delet);
+            $('.text').append('<br>');
+            $('.text').on('click', 'span', function(){
+                $(this).remove();
+            })
+            */
+        }
+
+    </script>
+</body>
+</html>

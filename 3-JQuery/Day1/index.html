@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./code.jquery.com_jquery-3.7.0.min.js"></script>
+    <script src="./script.js"></script>
+</head>
+<style>
+    .mySpan{
+        color: red;
+    }
+</style>
+<body>
+    <!--1 <div class="myEle">Hello jQuery</div> -->
+
+    <!--2 <div class="myclass">Hello jQuery</div>
+    <p class="myclass">Hello World</p>
+    <span class="myclass">my span</span> -->
+
+    <!--3 <div class="parent">
+        <p>1</p>
+        <p>2</p>
+        <p>3</p>
+    </div> -->
+
+    <!--4 <input type="text">
+    <textarea></textarea> -->
+
+    <!--5 <a href="https://www.google.com">google</a>
+    <a href="#">click</a> -->
+    
+    <!--6 <span>span1</span>
+    <span>span2</span>
+    <span>span3</span>
+    <span>span4</span> -->
+
+    <!--7 <a>click1</a>
+    <a>click2</a>
+    <a>click3</a>
+    <input id="myInp" type="text"> -->
+
+    <!--8 <div class="container">
+        <h1>Hello</h1>
+    </div> -->
+
+    <!--9 <div class="container">
+        <h1>Hello</h1>
+    </div> -->
+
+    <!--10 11 <h1><span>Hello jQuery</span></h1>
+    <button onclick="classes()" onmouseleave="remove()">click</button> -->
+
+    <!--12 <input type="text">
+    <button onclick="printName()">print</button> -->
+
+    <!--13 <button onclick="">click</button> -->
+
+    <button>Add</button>
+    <div class="Paragraphs"></div>
+    <script>
+        /*1
+        const jsEle = document.getElementsByClassName('myEle');
+        const jQueryEle = $('.myEle');
+        console.log($(jsEle).text());
+        console.log(jQueryEle);
+        //$('myEle')
+        */
+
+        //2 console.log($('.myclass:contains("Hello")'));
+
+        /*
+        3
+        console.log($('.parent p')); //return children
+        console.log($('.parent:has(p)')); //return parent
+        console.log($('.parent p:even'));
+        console.log($('.parent p:odd'));
+        */
+
+        //4 console.log($(':input')); // : => to select all control inputs
+       
+        /*
+        5
+        console.log($('a[href^="https"]'));
+        console.log($('a[href$="https"]'));
+        console.log($('a[href*="https"]'));
+        */
+        
+        /*
+        6
+        $('span').each(function(i, ele){
+            console.log($(ele).text());
+            console.log(this)
+        })
+        */
+        
+        /*7
+        $($('a')[0]).attr('href', 'https://www.google.com');
+        $('#myInp').attr('type');
+        */
+
+        /*8
+        const element = $('<span>this is span</span>');
+        $('.container').append(element);
+        */
+
+        //9 $('.container h1').wrap('<span class= "mySpan">')
+        
+        /*
+        $('h1').css({
+            'background-color':'lightblue',
+            'border': '2px solid black'
+        });
+        */
+       
+        /*10
+        function classes(){
+            //$('h1').addClass('mySpan');
+            $('h1').toggleClass('mySpan');
+        }
+        
+        function remove(){
+            $('h1').removeClass('mySpan');
+        }
+        */
+        
+        /*
+        //getter
+        console.log($('h1').html()) //like innerHTML 
+        console.log($('h1').text()) //like textContent 
+
+        //setter
+        $('h1').append('<i>Hello Again</i>').html()
+        */
+
+        /*12
+        function printName(){
+            console.log($('input').val()); //get value of input
+        }
+        */
+
+        /*
+        $('button').click(() => {
+            alert('success');
+        })
+        */
+        /*
+        $('button').on('click mouseleave', function(){
+            alert('success');
+        })
+        */
+        
+        /*
+        setTimeout(() =>{
+            $('button').off('click');
+        },5000)
+        */
+
+        $('button').click(() =>{
+            for(let i = 0 ; i < 4 ; i++){
+                $('.Paragraphs').append(`<p class="child">${i+1}</p>`)
+            }
+        })
+
+        $('.Paragraphs').on('click', 'p', function(){
+            console.log(this.textContent)
+        })
+
+        
+
+    </script>
+</body>
+</html>
