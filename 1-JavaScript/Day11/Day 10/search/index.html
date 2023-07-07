@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Search</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <form class="search-form">
+    <input type="text" class="search" placeholder="City or State">
+    <ul class="suggestions">
+      <li>Filter for a city or state</li>
+    </ul>
+  </form>
+  <script>
+    var cities = []
+    var searchInput = document.getElementsByClassName("search")[0]
+    var suggestions = document.getElementsByClassName("suggestions")[0]
+
+
+    searchInput.addEventListener("keydown", displayMatchedVals)
+
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', 'data.json')
+    xhr.send();
+    xhr.addEventListener("load", () => {
+
+      var data = JSON.parse(xhr.response)
+      cities = data
+
+    })
+
+    function filterCities() {
+      var text = searchInput.value
+      var regex = new RegExp(text, "i")
+
+      var filteredData = cities.filter((element) => {
+
+        return element.city.match(regex) || element.state.match(regex)
+      })
+
+      return filteredData
+
+    }
+
+    function displayMatchedVals() {
+      suggestions.innerHTML = ""
+      var filteredData = filterCities()
+
+      // for (var item of filteredData) {
+      //   suggestions.innerHTML += `
+      //   <li>${item.state} , ${item.city}</li>
+      //   `
+      // }
+
+     var newFilteredData= filteredData.map((obj)=>{
+        return `<li>${obj.city} , ${obj.state}</li>`
+      })
+     var liArr= newFilteredData.join('')
+     suggestions.innerHTML=liArr
+    }
+
+
+    //map()
+
+  //   var arr=[10,20,30,40]
+  //  var newArr= arr.map((num)=>{
+      
+  //   return `<li>${num}</li>`
+  //  })
+
+  //  console.log(newArr.join(''));
+
+  </script>
+</body>
+
+</html>
