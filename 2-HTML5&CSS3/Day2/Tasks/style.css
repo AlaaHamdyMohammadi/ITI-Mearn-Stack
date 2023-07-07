@@ -1,0 +1,168 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap'); */
+*{
+    margin: 0;
+    padding: 0;
+}
+
+@font-face {
+    font-family: newFont;
+    src: url('./VeganStylePersonalUse-5Y58.ttf');
+}
+
+body{
+    font-weight: bolder;
+    font-family: newFont;
+}
+
+.tasks{
+    text-align: center;
+}
+
+/* task1 */
+.icons{
+    display: flex;
+    background-color: lightgrey;
+    padding: 20px;
+    margin: 20px;
+    justify-content: space-around;
+    border-radius: 20px;
+    font-size: 30px;
+}
+ul li i{
+    color: gray;
+    transition: all 0.3s;
+}
+ul li i:hover{
+    color: black;
+    background-color: lightcoral;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* task2 */
+.pargraph{
+    color: black;
+    background-color: lightblue;
+    font-size: 30px;
+     padding: 20px;
+    margin: 20px;
+    text-align: center;
+}
+
+/* task 3 */
+.container{
+    background-color: lightgray;
+    width: 200px;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.toggle{
+    width: 182px;
+    height: 55px;
+    background-color: lightcoral;
+    border-radius: 35px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s;
+} 
+.toggle .text{
+    position: absolute;
+    left: 3px;
+    top: 7px;
+}
+.toggle .text img{
+    width: 40px;
+    border-radius: 50%;
+}
+.toggle .text span{
+    position: absolute;
+    bottom: 10px;
+    font-size: 25px;
+}
+
+.toggleCircle{
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-color: lightgrey;
+    border-radius: 50%;
+    right: 3px;
+    /* bottom: 25px; */
+    transition: all 0.3s;
+}
+.toggleCircle div{
+    margin-left: 12px;
+}
+.active{
+    background-color: #2ecc71;
+}
+.active .toggleCircle{
+    right: calc(182px - 40px - 3px);
+}
+
+/* task4 */
+.gallery{
+    margin-left: 40px;
+}
+
+.gallery img{
+    width: 200px;
+    transition: all 0.3s;
+    padding: 20px;
+}
+
+.gallery img:hover{
+    transform: scale(1.2);
+}
+
+/* task 5 */
+
+.input input{
+    width: 100px;
+    padding: 10px;
+}
+.input input:focus{
+    width: 200px;
+    transition: 1s;
+}
+
+/* task 6 */
+.gif{
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+.gif img {
+  animation: moveGif 5s linear infinite;
+}
+
+@keyframes moveGif {
+  0% {
+    transform: rotateY(180deg);
+  }
+  50% {
+    transform: translateX(calc(150vh - 200px)) rotateY(180deg);
+  }
+  51%{
+    transform: translateX(calc(150vh - 200px)) rotateY(0deg);
+  }
+  100% {
+    transform: rotateY(0deg);
+  }
+}
+
+
+/* task7 */
+.colunms{
+    column-count: 4;
+    column-gap: 200px;
+    column-rule: 2px solid lightseagreen;
+}
+
+/* task8 */

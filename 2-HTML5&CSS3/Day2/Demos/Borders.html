@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div1 {
+            width: 60%;
+            border: 2px solid blue;
+            border-radius: 30px;
+        }
+
+        #div2 {
+            width: 150px;
+            height: 150px;
+            border: 3px solid blue;
+            /* border-radius: 10px 20px 30px 40px; */
+            /* border-radius: 10px 20px 30px 40px/20px 30px 40px 50px; */
+            /* border-radius: 10px 20px 30px 40px/60px; */
+            /* border-radius: 30px 60px; */
+            border-radius: 50%;
+        }
+
+        #div3 {
+            width: 60%;
+            border: 2px solid red;
+            /* h-offset v-offset blur spread color */
+            box-shadow: 6px 8px 5px 7px blue;
+        }
+
+        #div4 {
+            border: 15px solid transparent;
+            border-image-source: url('./border.png');
+            border-image-slice: 27 28 27 29;
+            border-image-repeat: repeat;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <div id="div1">Div1</div> -->
+    <!-- <div id="div2">Div2</div> -->
+    <!-- <div id="div3">Div3</div> -->
+    <div id="div4">Div4</div>
+</body>
+
+</html>

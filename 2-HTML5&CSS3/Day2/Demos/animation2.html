@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @keyframes divAnimation {
+            0%{
+                background-color: orangered;
+                transform: translate(20px,20px);
+            }
+            25%{
+                background-color:blue;
+                transform: translate(250px,20px);
+            }
+            50%{
+                background-color:rosybrown;
+                transform: translate(250px,250px);
+            }
+            75%{
+                background-color: green;
+                transform: translate(20px,250px);
+            }
+            
+        }
+
+        div{
+            width:150px;
+            height: 150px;
+            background-color: lightcoral;
+            animation-name: divAnimation;
+            animation-duration: 6s;
+            animation-iteration-count: infinite;
+            animation-direction: alternate-reverse;
+        }
+        /* div:hover{
+            animation-play-state: paused;
+        } */
+    </style>
+</head>
+<body>
+    <div></div>
+</body>
+</html>

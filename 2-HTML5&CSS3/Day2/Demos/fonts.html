@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* @import url('https://fonts.googleapis.com/css2?family=Mukta:wght@800&display=swap'); */
+
+        /* fallback */
+        /* web safe fonts */
+        #para1 {
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-size: 50px;
+        }
+
+        /* custom font => server font || web font => online font */
+
+        @font-face {
+            font-family: newFont;
+            src: url('./LemonJellyPersonalUse-dEqR.ttf');
+        }
+
+        #head1 {
+            font-family: newFont;
+        }
+
+        #para2 {
+            font-family: 'Mukta', sans-serif;
+        }
+        h3{
+            font-family: 'Permanent Marker', cursive;
+            font-size: 100px;
+        }
+    </style>
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@800&display=swap" rel="stylesheet"> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@800&family=Permanent+Marker&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <p id="para1">Hello MEARN Track</p>
+    <h1 id="head1">Custom Font - Hello Heading one</h1>
+    <p id="para2">Web Font - Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae fuga explicabo ipsum
+        veritatis enim eaque quia quae sed temporibus tenetur labore rerum non facilis veniam quibusdam sapiente,
+        dolorum aliquid. Velit.</p>
+
+        <h3>Web Font2 - hello world</h3>
+</body>
+
+</html>

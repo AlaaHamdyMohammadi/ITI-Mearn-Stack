@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./all.min.css">
+    <title>Document</title>
+    <style>
+        #image{
+            height: 55px;
+            width: 55px;
+            border-radius: 50%;
+            position: relative;
+            top: 60px;
+            z-index: 10;
+        }
+        .toggle{
+            width: 182px;
+            height: 55px;
+            background-color: lightcoral;
+            border-radius: 35px;
+            position: relative;
+            cursor: pointer;
+            transition: width 0.3s;
+        } 
+        #name{
+            position: absolute;
+            top: -5%;
+            right: 45%;
+            font-size: 20px;
+        }
+        #x{
+            position: absolute;
+            top: 30%;
+            right: 10%;
+            font-size: 20px;
+        }
+
+
+
+    </style>
+</head>
+
+<body style="margin: -5px;">
+     
+       <img id="image" src="./team-04.png" alt="">
+        <div class="toggle" id="container">
+            <p id="name">Alaa </p>
+            <span id="x" >x</span>
+        </div>
+
+    <script>
+        
+            const container = document.querySelector('.toggle');
+            document.querySelector('#x').addEventListener('click', () =>{
+                container.style.width = "0px";
+                container.style.transition = "width 2s";
+            })
+            document.querySelector('#image').addEventListener('click', () =>{
+                container.style.width = "182px";
+                container.style.transition = "width 2s";
+            })
+            
+
+        </script>
+</body>
+</html>

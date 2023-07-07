@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./all.min.css">
+    <link rel="stylesheet" href="./VeganStylePersonalUse-5Y58.ttf">
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300&display=swap" rel="stylesheet"> -->
+
+    <title>Tasks</title>
+</head>
+<body>
+    <h1 class="tasks">Task1</h1>
+    <ul class="icons" type="none">
+        <li>
+            <a href="#">
+                <i class="fa-solid fa-house"></i>
+            </a>
+            <p>Home</p>
+        </li>
+        <li>
+            <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
+            <p>Explore</p>
+        </li>
+        <li>
+            <a href="#"><i class="fa-solid fa-tv"></i></a>
+            <p>Subscribe</p>
+        </li>
+        <li>
+            <a href="#"><i class="fa-solid fa-photo-film"></i></a>
+            <p>Library</p>
+        </li>
+    </ul>
+    <!-- ------------------------------------ -->
+    <h1 class="tasks">Task2</h1>
+    <p class="pargraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, optio.</p>
+    <!-- ------------------------------------ -->
+    <h1 class="tasks">Task3</h1>
+    <div class="contact-chip" style="background-color: gray; width: fit-content;">
+        <img id="image" onclick="open()" style="width: 50px; border-radius: 50%" src="./team-04.png" alt="">
+        <span id="name">Alaa</span>
+        <a id="icon" onclick="close()">x</a>
+    </div>
+    <!-- ------------------------------------ -->
+    <h1 class="tasks">Task4</h1>
+    <div class="gallery">
+        <img src="./features-03.jpg" alt="">
+        <img src="./gallery-01.png" alt="">
+        <img src="./gallery-02.png" alt="">
+        <img src="./gallery-04.png" alt="">
+    </div>
+    <!-- ------------------------------------ -->
+    <h1 class="tasks">Task5</h1>
+    <div class="input" style="margin: 30px;">
+        <label for="">Name</label>
+        <input type="text">
+    </div>
+    <!-- ------------------------------------ -->
+    <h1 class="tasks">Task6</h1>
+    <div class="gif">
+        <img src="./tiger.gif" alt="">
+    </div>
+    <!-- ------------------------------------ -->
+    <h1 class="tasks">Task7</h1>
+    <p class="colunms">
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laborum ipsa nihil laudantium velit? Eius, sed veritatis. Amet cum consequuntur nemo voluptate, harum earum accusantium quis fuga velit obcaecati quo voluptates quaerat quasi, ea beatae natus quibusdam ratione. Sapiente ipsum voluptatem obcaecati esse adipisci voluptatum quas nemo a pariatur sed quis minima quae molestiae natus veniam quam, est, numquam illum nam. Eius temporibus ut consequatur, corrupti vel tenetur quas sequi aspernatur maiores error accusamus, labore non delectus reprehenderit voluptatum magni itaque aliquam. Hic tempora est deleniti soluta debitis, alias molestiae rem autem, saepe minus cumque dolore repellat laudantium, at voluptate! Non rem, iure, eaque, sit aperiam architecto quasi esse voluptatibus explicabo commodi exercitationem corrupti. Eius, maxime expedita accusantium commodi quas laudantium id at facere impedit fuga repellat dolor, itaque et sapiente sint voluptatem neque incidunt debitis facilis omnis recusandae. Suscipit, doloribus optio vero distinctio modi tenetur pariatur nobis atque libero explicabo!
+    </p>
+    <!-- ------------------------------------ -->
+    
+    <div class="container">
+            <div class="toggle">
+                <div class="text">
+                    <div>
+                        <img id="image" src="./team-04.png" alt="">
+                        <span class="off">Alaa</span>
+                    </div>
+                </div>
+                <div class="toggleCircle">
+                    <div><i style="margin-top: 13px; margin-left: 4px;" class="fa-solid fa-xmark"></i></div>
+                </div>
+            </div>
+        </div>
+        <script>
+            var element = document.querySelector(".toggle");
+            var element2 = document.querySelector(".text");
+
+
+            element.onclick = function(){
+                element.classList.toggle('active')
+                element2.style.display = "none"
+            }
+            element.classList.remove('active')
+            element2.style.display = "visible"
+
+                
+        </script>
+</body>
+</html>

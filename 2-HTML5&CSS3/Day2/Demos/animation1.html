@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 1-declare animation */
+        /* @keyframes animationName {} */
+        @keyframes divAnimation {
+            from{
+                width: 300px;
+                height: 350px;
+                background-color:lightcoral;
+            }
+            to{
+                width:600px;
+                height: 600px;
+                background-color: darkgreen;
+            }
+            
+        }
+        div{
+            margin: 20px auto;
+            animation: divAnimation;
+            animation-duration: 4s;
+            animation-iteration-count: infinite;
+            animation-delay: 3s;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+</body>
+</html>
