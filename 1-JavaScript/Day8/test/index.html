@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dynamic Select Elements</title>
+</head>
+<body>
+  <h1>Dynamic Select Elements</h1>
+
+  <label for="band">Select a band:</label>
+  <select id="band" onchange="populateArtists()">
+    <option value="">-- Select a band --</option>
+    <option value="Band 1">Band 1</option>
+    <option value="Band 2">Band 2</option>
+  </select>
+
+  <label for="artist">Select an artist:</label>
+  <select id="artist"></select>
+
+  <!-- <script>
+    const artistsByBand = {
+      "Band 1": ["Artist 1", "Artist 2", "Artist 3"],
+      "Band 2": ["Artist 4", "Artist 5", "Artist 6"]
+    };
+
+    function populateArtists() {
+      const bandDropdown = document.getElementById('band');
+      const artistDropdown = document.getElementById('artist');
+
+      // Clear previous options
+      artistDropdown.innerHTML = '';
+
+      // Get selected band
+      const selectedBand = bandDropdown.value;
+
+      if (selectedBand !== '') {
+        const artists = artistsByBand[selectedBand];
+
+        artists.forEach(artist => {
+          const option = document.createElement('option');
+          option.text = artist;
+          option.value = artist;
+          artistDropdown.add(option);
+        });
+      }
+    }
+  </script> -->
+  <script src="index.js"></script>
+</body>
+</html>
