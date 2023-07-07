@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <video id="video1">
+        <source src="./video/sample.mp4">
+    </video>
+    <button onclick="func1()">Play|Pause</button>
+
+    <script>
+        var video1=document.getElementById("video1");
+        function func1(){
+            if(video1.paused)
+            {
+                video1.play();
+            }
+            else{
+                video1.pause();
+            }
+
+        }
+    </script>
+</body>
+</html>

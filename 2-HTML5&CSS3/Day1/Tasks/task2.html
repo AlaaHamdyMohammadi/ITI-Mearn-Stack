@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./main.css">
+    <title>Task2</title>
+</head>
+<body>
+    <form action="" method="get">
+        <div class="myDiv">
+            <label for="">UserName</label>
+            <input class="inp1 inp" type="text" placeholder="Enter Your User Name" required minlength="10" maxlength="20">
+        </div>
+        <div class="myDiv">
+            <label for="">Password</label>
+            <input class="inp2 inp" type="password" placeholder="Enter Your Password" required pattern=".{4,8}">
+        </div>
+        <div class="myDiv">
+            <label for="">Email</label>
+            <input class="inp3 inp" type="email" placeholder="Enter Your Email" required>
+        </div>
+        <div class="myDiv">
+            <label for="">Phone</label>
+            <input class="inp4 inp" type="tel" placeholder="Enter Your Phone"  maxlength="11" pattern="^01(0|1|2|5)[0-9]{8}$">
+        </div>
+        <input class="inp5 inp" type="submit" value="Send">
+        <input class="inp6 inp" type="submit" value="Reset">
+    </form>
+</body>
+</html>

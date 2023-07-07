@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input:invalid + .div1{
+            visibility: visible;
+        }
+        input:valid + .div1{
+            visibility:hidden;
+        }
+        input:required{
+            border: 2px dashed red;
+        }
+        input:valid{
+            border: 3px solid blue;
+        }
+
+
+
+
+    </style>
+</head>
+
+<body>
+    <form>
+        <label for="input1">Enter Name</label>
+        <input type="text" id="input1" name="input1" placeholder="enter name" pattern="[a-zA-Z]{3,4}" required>
+
+        <div class="div1">name is required and must be at least 3 characters</div>
+    </form>
+
+</body>
+
+</html>

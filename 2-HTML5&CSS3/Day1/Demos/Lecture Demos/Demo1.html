@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #main {
+            width: 800px;
+            border: 2px solid black;
+            margin: 20px auto;
+        }
+
+        #header1,
+        #footer1 {
+
+            background-color: lightgray;
+            padding: 12px;
+        }
+
+        #header1>h1,
+        #footer1>p {
+            text-align: center;
+            font: bold 15px tahoma;
+        }
+
+        #mainnav {
+            background-color: lightblue;
+        }
+
+        #mainnav li {
+            list-style-type: none;
+            display: inline-block;
+            color: white;
+            margin: 10px;
+            width: 120px;
+        }
+
+        #mainnav li:hover {
+            color: blue;
+            text-decoration: underline;
+        }
+
+        #section1 {
+            float: left;
+            width: 60%;
+            background-color: lightgoldenrodyellow;
+        }
+
+        #section1>article {
+            border: 2px solid brown;
+            margin: 7px;
+            padding: 6px;
+        }
+
+        #section1 header {
+            text-align: center;
+        }
+
+        #section1 footer {
+
+            border-top: 2px dashed black;
+        }
+
+        #aside1 {
+            float: right;
+            width: 30%;
+            background-color: rgb(164, 200, 222);
+
+        }
+
+        #aside1>p {
+            border: 2px solid black;
+            text-align: center;
+            margin-top: 12px;
+        }
+
+        #aside1>p:nth-child(odd) {
+
+            background-color: lightpink;
+        }
+
+        #aside1>p:nth-child(even) {
+
+            background-color: lightseagreen;
+        }
+
+        #footer1 {
+            clear: both;
+        }
+    </style>
+</head>
+
+<body>
+    <section id="main">
+        <header id="header1">
+            <h1>MEARN Track</h1>
+        </header>
+        <nav id="mainnav">
+            <ul>
+                <li>Home</li>
+                <li>About</li>
+                <li>Contact</li>
+            </ul>
+        </nav>
+        <section id="section1">
+            <article>
+                <header>
+                    <h2>Article One</h2>
+                </header>
+                <p>Hello Article One</p>
+                <footer>
+                    <p>CopyRight &copy; to Article One</p>
+                </footer>
+            </article>
+            <article>
+                <header>
+                    <h2>Article Two</h2>
+                </header>
+                <p>Hello Article Two</p>
+                <footer>
+                    <p>CopyRight &copy; to Article Two</p>
+                </footer>
+            </article>
+        </section>
+        <aside id="aside1">
+            <!-- 1 -->
+            <p>ITI Qena</p>
+            <!-- 2 -->
+            <p>ITI Sohag</p>
+            <!-- 3 -->
+            <p>ITI Aswan</p>
+            <!-- 4 -->
+            <p>ITI Smart</p>
+        </aside>
+        <footer id="footer1">
+            <p>CopyRights &copy; reserved to MEARN Track</p>
+        </footer>
+    </section>
+</body>
+
+<!-- <hgroup>
+    <h1>heading1</h1>
+    <h2>heading2</h2>
+    <h3>heading3</h3>
+</hgroup> -->
+<!-- <address>6th street,cairo,egypt</address> -->
+</html>
