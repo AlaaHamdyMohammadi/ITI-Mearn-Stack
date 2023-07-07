@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div1,#div2 {
+            width: 250px;
+            height: 300px;
+            border: 2px solid black;
+        }
+    </style>
+</head>
+
+<body ondrop="dropElem(event)" ondragover="allowDragElem(event)">
+    <div id="div1" ondrop="dropElem(event)" ondragover="allowDragElem(event)"></div>
+
+    <br>
+    <!-- <div id="div2" ondrop="dropElem(event)" ondragover="allowDragElem(event)"> -->
+        <img id="test" src="pom-laptop.webp" width="200" height="200" ondragstart="dragElem(event)" draggable="true">
+    <!-- </div> -->
+
+
+    <script>
+        function allowDragElem(ev) {
+            ev.preventDefault();
+        }
+
+        function dragElem(ev) {
+            // setData("key",value)
+            ev.dataTransfer.setData("img1", ev.target.id);
+        }
+
+        function dropElem(i) {
+            // getData("key")
+            var data = i.dataTransfer.getData("img1"); //test
+
+            i.target.appendChild(document.getElementById(data));
+
+        }
+    </script>
+</body>
+
+</html>

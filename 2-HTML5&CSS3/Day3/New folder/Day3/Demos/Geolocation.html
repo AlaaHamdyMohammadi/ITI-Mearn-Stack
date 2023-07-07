@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="getLocation()">Go To Location</button>
+    <p id="para"></p>
+    <script>
+        var para1 = document.getElementById("para");
+
+        function getLocation() {
+            if (navigator.geolocation) {
+                // true
+                // getPermission => getCurrentPosition()
+                // callback func => pass function as parameter inside function
+                navigator.geolocation.getCurrentPosition(showPosition, showError);
+            } else {
+                // false
+                para1.innerHTML = "Geolocation is not supported on your browser";
+            }
+        }
+
+        // allow
+        function showPosition(pos) {
+            // console.log(pos);
+            // console.log(pos.coords);
+            // console.log(pos.coords.longitude);
+            // console.log(pos.coords.latitude);
+            var lat = pos.coords.latitude;
+            var lon = pos.coords.longitude;
+            para1.innerHTML = "Latitude : " + lat + "<br>Longitude : " + lon;
+
+            // query string => url?q=
+            var url = "https://www.google.com/maps?q=" + lat + "," + lon;
+            window.open(url, '_blank');
+
+
+        }
+
+        // block
+        function showError(error) {
+            console.log(error);
+            switch (error.code) {
+                case error.PERMISSION_DENIED:
+                    para1.innerHTML = "User denied the request for Geolocation."
+                    break;
+                case error.POSITION_UNAVAILABLE:
+                    para1.innerHTML = "Location information is unavailable."
+                    break;
+                case error.TIMEOUT:
+                    para1.innerHTML = "The request to get user location timed out."
+                    break;
+                case error.UNKNOWN_ERROR:
+                    para1.innerHTML = "An unknown error occurred."
+                    break;
+            }
+        }
+    </script>
+</body>
+
+</html>

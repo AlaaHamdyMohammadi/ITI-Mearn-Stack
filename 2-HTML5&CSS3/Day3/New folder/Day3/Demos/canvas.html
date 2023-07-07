@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="canvas1" width="300" height="200" style="border: 2px solid black;">
+        your browser does not support canvas
+    </canvas>
+    <script>
+        // step1: find canvas element
+        var canvas=document.getElementById("canvas1");
+        // step2: create a drwaing object
+        var ctx=canvas.getContext("2d"); 
+        // step3: draw on canvas
+        // // draw rectangle
+        // ctx.fillStlye = "#FF0000";
+        // // ctx.fillRect(x,y,width,height)
+        // ctx.fillRect(0,0,150,100);
+
+        // draw line
+        // moveTo(x1,y1)  lineTo(x2,y2)
+        ctx.moveTo(0,0);
+        ctx.lineTo(200,100);
+        ctx.stroke();
+    </script>
+</body>
+</html>
