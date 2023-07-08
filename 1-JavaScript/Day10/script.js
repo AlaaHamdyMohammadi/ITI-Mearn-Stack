@@ -83,20 +83,71 @@ console.log(student1)
 
 // 1)
 
-// function Sequence(start, end, step){
-//   this.start = start;
-//   this.end = end;
-//   this.step = step;
+function AddToList(start, end, step){
+  var list =[];
 
-//   function list(){
-//     console.log(this);
-//     console.log(this.start, this.step);
-//   }
-//   list.call(this)
-// }
+  function fillList(){
+    if(step > 0){
+      for(let i = start; i <= end; i += step) list.push(i);
+    }
+    else{
+      throw new Error('Step cannot be 0 or nagative');
+    }
+  }
+  fillList();
 
-// const seq1 = new Sequence(1,1,1);
-// seq1.list();
+  this.appendValue = function (value) {
+    if (step > 0 && value > list[list.length - 1]) {
+      list.push(value);
+    } else {
+      throw new Error("Invalid value.");
+    }
+  }
+
+  this.prependValue = function (value) {
+    if(step > 0 && value < list[0]) {
+      list.unshift(value);
+    } else {
+      throw new Error("Invalid value.");
+    }
+  }
+
+  this.dequeueValue = function () {
+    if (list.length === 0) {
+      throw new Error("Empty list.");
+    }
+    return list.shift();
+  };
+
+  this.popValue = function () {
+    if (list.length === 0) {
+      throw new Error("Empty list.");
+    }
+    return list.pop();
+  };
+
+  this.displayList = function () {
+    console.log(list);
+  };
+}
+
+var value = new AddToList(1, 10, 2);
+value.displayList();
+
+value.appendValue(11);
+value.displayList();
+
+value.prependValue(-1);
+value.displayList();
+
+var dequeuedValue = value.dequeueValue();
+console.log(dequeuedValue);
+value.displayList();
+
+var poppedValue = value.popValue();
+console.log(poppedValue);
+value.displayList();
+
 
 // ---------------------------------------
 
@@ -143,7 +194,7 @@ console.log(`Counter = ${Rectangle.calcCounter()}`);
 //-------------------------------
 
 //3)
-
+/*
 const Shape = function(dim1, dim2){
   if (this.constructor == Shape) {
     throw  "This is Abstract";
@@ -185,3 +236,4 @@ Square.prototype.constructor = Square;
 
 const squ1 = new Square(4, 4);
 console.log(squ1.calcArea());
+*/

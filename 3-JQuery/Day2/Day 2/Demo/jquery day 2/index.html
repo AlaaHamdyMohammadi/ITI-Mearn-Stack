@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.7.0.min.js"></script>
+    <!-- <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script> -->
+    <style>
+        div{
+            width:200px;
+            height: 200px;
+            background-color:aqua;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- <div></div>
+    <div></div>
+    <div></div> -->
+    <!-- <button>add</button> -->
+<!-- <div></div> -->
+<!-- <button onclick="test1()">show</button>
+<button onclick="test2()">hide</button>
+<button onclick="test3()">toggle</button> -->
+<!-- <button>animate</button>
+<button onclick="$('div').stop()">stop animation</button> -->
+
+
+<!-- <div></div> -->
+<!-- 
+<div>
+    <p>this is direct child</p>
+    <span>
+        this is span
+        <p>this is indirect child</p>
+    </span>
+</div>
+
+
+<div class="myDiv"></div>
+<div></div> -->
+
+<div></div>
+
+    <script>
+
+
+// $.ajax({
+//    "url":'https://jsonplaceholder.typicode.com/users',
+//    "method":'GET',
+//    'success':function(data,msg,obj){
+//           console.log(data);
+//    },
+//    'error':function(){
+//       console.log('error');
+//    }  
+// })
+
+// $.get("https://jsonplaceholder.typicode.com/users",function(data,msg,obj){
+//     console.log(data);
+//     console.log(msg);
+//     console.log(obj);
+// })
+
+$('div').load('https://jsonplaceholder.typicode.com/users')
+
+
+
+
+//////////////////////////////////////////////////////////////////////////////
+
+//not() , find() , end
+// $('div').not('.myDiv').css('background-color','blue')
+
+// $('div').find('p,span').css('color','red').end().css('background-color','black')
+
+
+
+//////////////////////////////////////////////////////////////////////////////
+
+//chaining
+
+// $("div").css('background-color','red').text('hello world').fadeOut(4000);
+
+
+
+
+
+
+
+
+
+
+///////////////////////////////////////////////////////////////////
+//animate  , stop
+
+// $($("button")[0]).click(function() {
+//     $("div").animate({
+//         "left":"500px",
+//         "background-color":'green',
+//         'border':'1px solid black'
+//     },3000)
+// })
+
+
+
+
+
+
+
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////////
+//show , hide , toggle
+//fadeIn , fadeOut , fadeToggle
+//slideUp  , slideDown , slideToggle
+
+// function test1(){
+//     // $("div").show("fast")
+//     // $("div").fadeIn(2000)
+//     $("div").slideDown(1500)
+// }
+
+
+// function test2(){
+//     // $("div").hide(2000)
+//     // $("div").fadeOut(2500)
+//     $("div").slideUp(2000)
+// }
+
+
+// function test3(){
+//     // $("div").toggle(1000)
+//     // $("div").fadeToggle(1000)
+//     $("div").slideToggle(1000)
+// }
+
+
+
+////////////////////////////////////////////////////////////////////
+
+
+// $("div").click(function(){
+//     alert("i'm div")
+// })
+
+// $("div").on("click mouseout dbclick",function(){
+//     alert("i'm div")
+// })
+
+// $('div').on({
+//     click:function(){
+//      alert('mona')
+//     },
+//     mouseout:function(){
+//         alert('hello')
+//     },
+//     dblclick:function(){
+//         alert('ay 7aga fe vvv')
+//     }
+// })
+
+
+// $("button").click(function(){
+//     for(var i=0;i<3;i++){
+//         $("div").append('<span>mona</span>')
+//     }
+// })
+
+// $("div").on("click","span",function(){
+//     console.log("hello");
+// })
+
+// $("div").each(function(i , ele){
+// //    console.log(ele);
+//     // $(ele).click(function(){
+//     //     console.log(i);
+//     // })
+
+// })
+    </script>
+    
+</body>
+</html>

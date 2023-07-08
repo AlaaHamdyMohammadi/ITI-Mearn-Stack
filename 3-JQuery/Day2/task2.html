@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>task2</title>
+    <script src="./code.jquery.com_jquery-3.7.0.min.js"></script>
+    <style>
+        body{
+            margin: 10px;
+        }
+        div{
+            width: 150px;
+            height: 300px;
+            background-color: lightgray;
+            text-align: center;
+            font-size: 25px;
+        }
+        #header{
+            display: none;
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: 10px;
+            background-color: gray;
+            padding: 10px;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <p class="p1">item1</p>
+        <p class="p2">item2</p>
+    </div>
+
+    <script>
+        /*
+        $('div').on({
+            mouseover: function(){
+                $('div').animate({'width' : '150px'})
+                const item1 = $('<p>').text('item1');
+                $('div').append(item1)    
+            },
+            mouseout: function(){
+                $('div').animate({'width' : '50px'})
+            },
+        })
+        */
+        
+        const header1 = $('<h2>').attr('id', 'header').text('header1');
+        $('div .p1').append(header1);  
+        const header2 = $('<h2>').attr('id', 'header').text('header2');  
+        $('div .p2').append(header2);  
+
+        $('.p1').on({
+            mouseover: function(){
+                header1.slideDown('slow')
+            },
+            mouseout: function(){
+                header1.slideUp('slow')
+            },
+        })
+
+        $('.p2').on({
+            mouseover: function(){
+                header2.slideDown('slow')
+            },
+            mouseout: function(){
+                header2.slideUp('slow')
+            },
+        })
+
+    </script>
+</body>
+</html>

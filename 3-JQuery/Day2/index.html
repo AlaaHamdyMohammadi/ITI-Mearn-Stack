@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./code.jquery.com_jquery-3.7.0.min.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <title>Document</title>
+    <style>
+        div{
+            width: 250px;
+            height: 250px;
+            background-color: lightcoral;
+            position: relative;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 1<div></div>
+    <button>Add</button> -->
+    
+    <!--3 <div></div>
+    <button onclick="show()">show</button>
+    <button onclick="hide()">hide</button>
+    <button onclick="toggle()">toggle</button> -->
+
+    <!--4 <div></div>
+    <button>Animate</button>
+    <button onclick="$('div').stop()">Stop</button> -->
+    
+    <!--5 <div></div> -->
+
+    <!--6 <div>
+        <p>direct child</p>
+        <span>
+            <p>indirect child</p>
+        </span>
+    </div>
+    <div class="myDiv"></div>
+    <div></div> -->
+    
+
+    <div></div>
+
+    <script>
+    /*1
+        $('div').on({
+            click:function(){
+                alert('click event');
+            },
+            mouseout:function(){
+                alert('mouseout event');
+            },
+            dbclick:function(){
+                alert('double click');
+            }
+        })
+        */
+    
+    /* 2
+        $('button').click(function(){
+            for(let i = 0; i < 3; i++){
+                $('div').append('<span>Hello</span>');
+            }
+        })
+        $('div').on('click','span', function(){ //on method wait span to created
+            console.log('hello again');
+        })
+        */
+
+    /*3 
+    //show, hide, toggle (work with display)       
+    //fadeIn, fadeout, fadeToggle (work with opacity)
+    //sideUp, slideDown, slideToggle (work with hieght)
+    
+       function show(){
+        //$('div').show('slow');
+        //$('div').fadeIn('500');
+        $('div').slideDown(500);
+       }
+       function hide(){
+        //$('div').hide(1000);
+        //$('div').fadeOut('500');
+        $('div').slideUp(500);
+       }
+       function toggle(){
+        //$('div').toggle(500);
+        //$('div').fadeToggle('500');
+        $('div').slideToggle(500);
+       }
+    */
+
+    /*4
+    $($('button')[0]).click(function(){
+        $('div').animate({
+            'left': '500',
+            'background-color': 'red',
+        }, 3000)
+    })
+    */
+    
+    //5 chaining
+    //$('div').css('background-color', 'green').text('hello').fadeIn(4000)
+
+    /*6
+    //not, find
+    //$('div').not('.myDiv').css({'background-color':'green'})
+    //$('div').find('p').css({'color':'white', 'font-size': '25px'}).end().css({'background-color':'green'})
+    */
+    
+    $.ajax({
+        'url': 'https://jsonplaceholder.typicode.com/users',
+        'method': 'get',
+        'success': function(data, message, respose){ //accept callback func
+            console.log(data);
+            console.log(message);
+            console.log(respose);
+
+        },
+        'error': function(){ //accept callback func
+            console.log('error');
+        },
+    })
+
+    $.get('https://jsonplaceholder.typicode.com/users', function(...args){
+        console.log(args);
+    })
+
+    $('div').load('https://jsonplaceholder.typicode.com/users')
+
+</script>
+</body>
+</html>
