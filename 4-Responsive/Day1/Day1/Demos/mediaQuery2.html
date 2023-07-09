@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        #container {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        #main {
+            display: flex;
+            /* flex: 1 */
+            /* flex-grow:1 , flex-shrink:1 ,flex-basis:0 */
+            /* flex: 1; */
+            height: 100vh;
+        }
+
+        #main>#left,
+        #main>#right {
+            flex: 0 0 20vw;
+            background-color: lightblue;
+        }
+
+        #main>#center {
+            flex-grow: 1;
+            background-color: lightcoral;
+        }
+
+        header,
+        footer {
+            background-color: lightgray;
+            text-align: center;
+            height: 10vh;
+        }
+
+        #main>#left {
+            order: -1;
+        }
+
+
+
+        /* first case */
+
+        @media screen and (max-width: 768px) {
+
+            #main {
+                flex-direction: column;
+
+                /* flex-wrap: wrap; */
+            }
+
+            #left{
+                display:none;
+             }
+            /* 
+             #left,#center,#right{
+                width: 100%;
+             } */
+        }
+
+        @media screen and (max-width: 400px) {
+            #right{
+                display: none;
+            }
+            #center{
+                width: 100%;
+            }
+            
+        }
+    </style>
+</head>
+
+<body>
+    <section id="container">
+        <header>
+            <h1>Header</h1>
+        </header>
+        <div id="main">
+            <article id="center">Center side</article>
+            <aside id="left">Left side</aside>
+            <aside id="right">Right side</aside>
+        </div>
+        <footer>Footer</footer>
+    </section>
+</body>
+
+</html>

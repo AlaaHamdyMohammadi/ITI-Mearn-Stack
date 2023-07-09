@@ -1,0 +1,106 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.main{
+    text-align: center;
+    padding: 10px;
+    margin: 10px;
+}
+header{
+    background-color: #3867d6;
+    color: #d1d8e0;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 25px;
+}
+header span a, .part1 span a{
+    color: #d1d8e0;
+}
+section{
+    display: flex;
+    justify-content: space-between;
+    font-size: 25px;
+    padding: 10px;
+}
+section .part1, section .part3{
+    background-color: #2d98da;
+    color: #d1d8e0;
+    width: 22%;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+     flex-direction: column;
+}
+section .part2{
+    background-color: #45aaf2;
+    color: #d1d8e0;
+    width: 55%;
+    border-radius: 10px;
+    padding: 10px;
+}
+section .part2 ul{
+    margin-right: 17em;
+}
+section .part2 ul li{
+    padding: 5px;
+}
+footer{
+    background-color: #3867d6;
+    color: #d1d8e0;
+    font-size: 25px;
+    padding: 12px;
+    border-radius: 10px;
+}
+
+@media(min-width: 768px) and (max-width: 1023px){
+    section .part3{
+        display: none;
+    }
+    section .part1{
+        width: 40%;
+    }
+}
+
+@media(max-width: 767px){
+    
+    section{
+        font-size: 20px;
+        flex-direction: column;
+        align-items: center;
+    }
+    img{
+        width: 100px;
+        padding: 10px;
+    }
+    header{
+        display: none;
+    }
+    section .part1, section .part2, section .part3{
+        margin-top: 5px;
+        width: 100%;
+    }
+    footer{
+        font-size: 20px;
+    }
+}
+
+/*
+CSS framworks
+1. bootstrap
+    Differences: Widely used and supported, extensive community and ecosystem, large number of themes and templates available.
+
+2. Foundation
+    Differences: Emphasizes flexibility and customization, offers a broader range of design options, suitable for both small and large projects.
+
+3.Bulma
+    Differences: Minimal and lightweight compared to other frameworks, easy to learn and use, highly customizable, lacks some advanced components and features.
+
+4.Semantic UI
+    Differences: Focuses on natural language principles, easy to understand and use, less popular compared to Bootstrap or Foundation.
+
+5.Tailwind CSS:
+    Differences: Specifically designed for React applications, follows Material Design guidelines, offers a wide range of pre-built components for consistent look and feel.
+*/
