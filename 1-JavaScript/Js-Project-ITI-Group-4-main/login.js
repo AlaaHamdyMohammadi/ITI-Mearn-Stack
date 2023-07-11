@@ -7,7 +7,6 @@ const overlay = document.querySelector(".overlay");
 const btnOpen = document.querySelector(".open");
 const btnClose1 = document.querySelector(".icon-close");
 const btnClose2 = document.querySelector(".icon-close2");
-const inputBoxs = document.querySelectorAll(".input-box");
 const loginForm = document.querySelector(".login-form");
 const registrationForm = document.querySelector(".register-form");
 const errorContainer = document.getElementById("errorContainer");

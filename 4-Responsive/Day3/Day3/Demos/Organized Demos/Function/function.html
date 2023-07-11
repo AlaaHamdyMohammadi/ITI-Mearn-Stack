@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="function.css">
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        /* [attribute*=value] */
+        [class*="col-"]
+        {
+            float: left;
+            padding: 10px;
+        }
+        .row::after
+        {
+            content: "";
+            clear: both;
+        }
+
+        .header{
+            background-color: blueviolet;
+            color: white;
+        }
+        .menu ul{
+
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+        .menu li{
+            padding: 8px;
+            margin-bottom: 10px;
+            background-color: turquoise;
+            color: white;
+        }
+        .menu li:hover{
+            background-color: tomato;
+        }
+        @media screen and (max-width:768px) {
+        [class*="col-"]
+        {
+           width: 100%;
+        }
+            
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="col-12 header">
+        <h1>Hello MEARN</h1>
+    </div>
+
+    <div class="row">
+        <div class="col-3 menu">
+            <ul>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+                <li>Node js</li>
+            </ul>
+        </div>
+        <div class="col-9">
+            <h1>Qena Track</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio rem repellendus eligendi nemo aperiam illum minus sunt est saepe? Ratione, distinctio odio suscipit earum magnam cupiditate reprehenderit deleniti consectetur magni.</p>
+        </div>
+        <div class="row">
+
+        </div>
+
+    </div>
+</body>
+</html>

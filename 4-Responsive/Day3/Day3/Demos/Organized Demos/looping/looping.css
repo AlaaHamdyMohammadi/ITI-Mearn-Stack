@@ -1,0 +1,33 @@
+li:nth-child(1) {
+  color: purple;
+}
+
+li:nth-child(2) {
+  color: aqua;
+}
+
+li:nth-child(3) {
+  color: lime;
+}
+
+li:nth-child(4) {
+  color: yellow;
+}
+
+li:nth-child(5) {
+  color: orange;
+}
+
+li:nth-child(6) {
+  color: red;
+}
+
+li {
+  font-family: 'Courier New';
+  font-size: 18px;
+}
+
+body {
+  background: #1D1F20;
+}
+/*# sourceMappingURL=looping.css.map */

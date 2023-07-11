@@ -1,0 +1,17 @@
+@media screen and (max-width: 768px) {
+  body {
+    background-color: lightgoldenrodyellow;
+  }
+  p {
+    color: blue;
+  }
+}
+@media screen and (max-width: 500px) {
+  body {
+    background-color: darkorchid;
+  }
+  p {
+    color: white;
+    font-size: 80px;
+  }
+}/*# sourceMappingURL=style2.css.map */

@@ -1,0 +1,166 @@
+.col-1 {
+  width: 6.25%;
+}
+
+.col-2 {
+  width: 12.5%;
+}
+
+.col-3 {
+  width: 18.75%;
+}
+
+.col-4 {
+  width: 25%;
+}
+
+.col-5 {
+  width: 31.25%;
+}
+
+.col-6 {
+  width: 37.5%;
+}
+
+.col-7 {
+  width: 43.75%;
+}
+
+.col-8 {
+  width: 50%;
+}
+
+.col-9 {
+  width: 56.25%;
+}
+
+.col-10 {
+  width: 62.5%;
+}
+
+.col-11 {
+  width: 68.75%;
+}
+
+.col-12 {
+  width: 75%;
+}
+
+.col-13 {
+  width: 81.25%;
+}
+
+.col-14 {
+  width: 87.5%;
+}
+
+.col-15 {
+  width: 93.75%;
+}
+
+.col-16 {
+  width: 100%;
+}
+
+.container .links ul {
+  display: flex;
+}
+.container .sass_layout {
+  text-align: center;
+  background-color: black;
+  color: white;
+  padding: 10px;
+}
+.container .sass_layout button {
+  padding: 10px;
+  color: white;
+  font-weight: bold;
+  border: none;
+  background-color: gray;
+}
+.container .section {
+  display: flex;
+  margin-top: 0px;
+  text-align: center;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #e6e6e6;
+  height: 70vh;
+}
+.container .section .aside1 {
+  font-size: 25px;
+}
+.container .section button {
+  padding: 10px;
+  color: white;
+  font-weight: bold;
+  border: none;
+  background-color: black;
+}
+.container .header {
+  margin-top: 20px;
+  background-color: #4b6584;
+  color: white;
+}
+.container .header h2 {
+  padding: 15px;
+}
+.container .hedear-content {
+  padding: 15px;
+}
+.container .footer {
+  margin-top: 20px;
+  background-color: #4b6584;
+  color: white;
+}
+.container .footer h2,
+.container .footer p {
+  padding: 15px;
+}
+
+.container-BEM {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.card {
+  background-color: #e6e6e6;
+  padding: 20px;
+}
+
+.card .card__content h4 {
+  color: gray;
+}
+
+.card--ThemeBlue .card__header, .card__next__one {
+  padding: 3px;
+  color: white;
+  background-color: #3867d6;
+}
+
+.card .card__content {
+  border-top: 1px solid gray;
+}
+
+.card--ThemeBlack .card__header, .card__next__two {
+  padding: 3px;
+  color: white;
+  background-color: black;
+}
+
+@media (max-width: 768px) {
+  .links {
+    display: none;
+  }
+  .section .aside2 img {
+    width: 250px !important;
+  }
+  .container-BEM {
+    flex-direction: column;
+  }
+  .card {
+    width: 80%;
+    margin: 10px;
+  }
+}/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,155 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.col-1 {
+  width: 6.25%;
+}
+
+.col-2 {
+  width: 12.5%;
+}
+
+.col-3 {
+  width: 18.75%;
+}
+
+.col-4 {
+  width: 25%;
+}
+
+.col-5 {
+  width: 31.25%;
+}
+
+.col-6 {
+  width: 37.5%;
+}
+
+.col-7 {
+  width: 43.75%;
+}
+
+.col-8 {
+  width: 50%;
+}
+
+.col-9 {
+  width: 56.25%;
+}
+
+.col-10 {
+  width: 62.5%;
+}
+
+.col-11 {
+  width: 68.75%;
+}
+
+.col-12 {
+  width: 75%;
+}
+
+.col-13 {
+  width: 81.25%;
+}
+
+.col-14 {
+  width: 87.5%;
+}
+
+.col-15 {
+  width: 93.75%;
+}
+
+.col-16 {
+  width: 100%;
+  margin-top: 20px;
+  padding: 10px;
+}
+
+.main {
+  text-align: center;
+  margin: 20px;
+}
+.main .content img {
+  max-width: 200px;
+  border-radius: 50%;
+}
+@media (max-width: 768px) and (max-width: 1023px) {
+  .main .content img {
+    content: url(./team-04.png);
+  }
+}
+.main .content h3 {
+  font-size: 7vh;
+}
+.main .education {
+  background-color: #45aaf2;
+}
+.main .achievements {
+  background-color: #fa8231;
+}
+.main .work {
+  background-color: #0fb9b1;
+}
+.main .education-content {
+  display: flex;
+  margin-top: 20px;
+  font-size: 20px;
+}
+.main .achievement-content {
+  display: flex;
+  margin-top: 20px;
+  font-size: 20px;
+}
+.main .work-content {
+  display: flex;
+  margin-top: 20px;
+  font-size: 20px;
+}
+.main .footer {
+  display: flex;
+  margin-top: 20px;
+  font-size: 20px;
+  padding: 20px;
+  background-color: #4b6584;
+}
+
+.main2 {
+  margin-top: 20px;
+  font-size: 20px;
+}
+
+.main2 nav {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+
+.main2 nav ul {
+  display: flex;
+  justify-content: space-between;
+}
+
+.main2 nav ul li {
+  padding-left: 20px;
+}
+
+.section {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.span {
+  display: flex;
+  margin-top: 20px;
+}
+
+.span .col-5, .span2 .col-7 {
+  border: 1px solid black;
+  margin: 5% 3%;
+  padding: 3%;
+}/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,17 @@
+$rainbow: purple aqua lime yellow orange red;
+// @for <variable> from <expression> to <expression> { ... } 
+//or @for <variable> from <expression> through <expression> { ... },
+@for $i from 1 through 6 {
+	li:nth-child(#{$i}) {
+		color: nth($rainbow, $i);
+	}
+}
+
+li {
+	font-family: 'Courier New';
+	font-size: 18px;
+}
+
+body {
+	background: #1D1F20;
+}

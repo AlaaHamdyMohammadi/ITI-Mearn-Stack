@@ -1,0 +1,187 @@
+// Conditions
+// @if() @else if()  @else{}
+// @mixin boxStyle($boxSize){
+//     @if($boxSize == large){
+//         width:500px;
+//         height: 500px;
+//         background-color:red;
+//         border: 2px solid blue;
+//     }
+//     @else if($boxSize == medium){
+//         width:300px;
+//         height: 300px;
+//         background-color:darkmagenta;
+//         border: 3px dashed lightgreen;
+
+//     }
+//     @else if($boxSize == small){
+//         width:100px;
+//         height: 100px;
+//         background-color:darkcyan;
+//         border: 4px dotted rgb(7, 49, 63);
+//     }
+//     @else{
+//         width: 50px;
+//         height: 50px;
+//         background-color:lightcoral;
+//         border: 1px solid black;
+//     }
+// }
+
+// .container1,.container2,.container3{
+//     display:flex;
+//     flex-wrap: wrap;
+// }
+
+// .box1{
+//     @include boxStyle(large);
+// }
+// .box2{
+//     @include boxStyle(medium);
+
+// }
+// .box3{
+//     @include boxStyle(small);
+//     // @include boxStyle(7);
+// }
+
+
+//############################### 
+
+// @mixin boxStyle($boxSize){
+//     @if($boxSize == 1){
+//         width:500px;
+//         height: 500px;
+//         background-color:red;
+//         border: 2px solid blue;
+//     }
+//     @else if($boxSize == 2){
+//         width:300px;
+//         height: 300px;
+//         background-color:darkmagenta;
+//         border: 3px dashed lightgreen;
+
+//     }
+//     @else if($boxSize == 3){
+//         width:100px;
+//         height: 100px;
+//         background-color:darkcyan;
+//         border: 4px dotted rgb(7, 49, 63);
+//     }
+//     @else{
+//         width: 50px;
+//         height: 50px;
+//         background-color:lightcoral;
+//         border: 1px solid black;
+//     }
+// }
+
+//############################### 
+// loop => for loop
+// for(var i=0;i<5;i++)
+// @for $i from 0 through 5
+// li:nth-child(1){
+//     color: red;
+// }
+// li:nth-child(2){
+//     color: blue;
+// }
+// li:nth-child(3){
+//     color: green;
+// }
+
+// pass multiple value to variable => list
+// nth($listName,$iterator)
+// $colors:red blue purple orange aqua green;
+
+// // through <= || to <
+// @for $i from 1 to 6 {
+//     li:nth-child(#{$i}) {
+//         color: nth($colors, $i);
+
+//     }
+// }
+
+// test
+// @for $i from 1 through 6 {
+//     li:nth-child(1){
+//         color: nth($colors , 1);
+//         color: red;
+
+//     }
+// }
+
+
+// while loop
+
+// @while $iterator<.....
+// $sizes:40px 50px 60px 70px 80px;
+
+// $i:1;
+// @while $i <= 5{
+
+//     // .test1 , .test2
+//     .test#{$i}{
+//         font-size:nth($sizes,$i);
+//     }
+//     $i:$i+1;
+// }
+
+// test
+// $i:1;
+// @while $i <= 5{
+
+//     // .test1 , .test2
+//     .test1{
+        // font-size:nth($sizes,1);
+//         font-size:40px;
+//     }
+//     $i:1+1;
+//     $i:2;
+// }
+
+
+// built in functions
+// colors
+
+// $color:red;
+// $darkenColor:darken($color,10%);
+// $lightColor:lighten($color,10%);
+// $rgbaColor:rgba($color,.5);
+// $grayScaleFunc:grayscale($color);
+
+// p{
+//     // color: $darkenColor;
+//     // color: $lightColor;
+//     // color: $rgbaColor;
+//     color: $grayScaleFunc;
+// }
+
+
+// numbers function
+// $num1:15.9px;
+
+// p{
+//     // font-size:round(15.9);//16
+//     // font-size:floor(15.9);//15
+//     // font-size:ceil(15.3);//16
+//     // font-size:abs(-15);//15
+//     // font-size:percentage(4.5);//450%
+//     // font-size: min(2,1,5);//1
+//     // font-size: max(2,1,5);//5
+// }
+
+
+// list functions
+// $list1:red blue green;
+// $list2:3px 4px 5px;
+// $list3:10px 20px 30px;
+// p{
+//     // width: length($list1);//3
+//     // color:nth($list1, 2)
+//     // color:set-nth($list1, 1 , purple);
+
+//     // color: append($list1,yellow);
+//     text-shadow: zip($list2,$list3,$list1);
+
+// }

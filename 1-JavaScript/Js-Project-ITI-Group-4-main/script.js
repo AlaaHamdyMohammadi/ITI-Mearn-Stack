@@ -21,8 +21,9 @@ const maxSlide = slides.length; //Number of Nodelist
 const createDashs = () => {
   slides.forEach(function (_, i) {
     dashs.insertAdjacentHTML(
+      //last child
       "beforeend",
-      `
+      `     
             <button class="dashs-dash" data-slide="${i}"></button>
         `
     );
@@ -30,6 +31,7 @@ const createDashs = () => {
 };
 createDashs();
 
+//current slide
 const activeDash = (slide) => {
   document
     .querySelectorAll(".dashs-dash")
@@ -43,6 +45,7 @@ activeDash(0);
 const goToSlide = (slide) => {
   // if curSlide = 1 => 0-1 => -1 * 100 = -100% (-100%, 0%, 100%)
   slides.forEach(
+    // slides must be : 0% .. 100% .. 200%
     (s, i) => (s.style.transform = `translateX(${100 * (i - slide)}%)`)
   );
 };
@@ -74,10 +77,24 @@ btnLeft.addEventListener("click", () => {
   prevSlide();
 });
 
+document.addEventListener("keydown", function (e) {
+  //console.log(e);
+  if (e.key === "ArrowLeft") {
+    clearInterval(mySildeShow);
+    prevSlide();
+  }
+  if (e.key === "ArrowRight") {
+    clearInterval(mySildeShow);
+    nextSlide();
+  }
+});
+
 dashs.addEventListener("click", (e) => {
   if (e.target.classList.contains("dashs-dash")) {
     // console.log('dash')
+    // all custom data attr in dataset
     const slide = e.target.dataset.slide;
+    clearInterval(mySildeShow);
     goToSlide(slide);
     activeDash(slide);
   }

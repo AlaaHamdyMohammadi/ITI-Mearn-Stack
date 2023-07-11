@@ -1,0 +1,9 @@
+$headerSizes: 48px 40px 31px 25px 20px 16px;
+$index: 1;
+
+@while $index <= 6 {
+  h#{$index}, .h#{$index} {
+    font-size: nth($headerSizes, $index);
+  }
+  $index: $index + 1;
+}

@@ -1,0 +1,56 @@
+// $total:12;
+// @function functionName(parameters){@return}
+// parameters => columnNumber   & return => res= column/total , res*100   
+// function
+// @function column-width($columnNum){
+//     @return percentage($columnNum/$total);
+// }
+
+// @for $i from 1 through $total {
+//     .col-#{$i} {
+//         width: column-width($i);
+//     }
+// }
+
+
+// .row {
+//     display: flex;
+// }
+
+// @media screen  and (max-width: 768px) {
+//     .row{
+//         flex-direction: column;
+//     }
+//     [class*="col-"]{
+//         width: 100%;
+//     }
+    
+// }
+
+
+
+// Media query in mixin
+@mixin mediaQueryInMixin($breakpoint) {
+    @media screen and (max-width:$breakpoint) {
+        @content;
+        
+    }
+
+}
+@include mediaQueryInMixin(768px){
+    body{
+        background-color: lightgoldenrodyellow;
+    }
+    p{
+        color: blue;
+    }
+}
+@include mediaQueryInMixin(500px){
+    body{
+        background-color: darkorchid;
+    }
+    p{
+        color: white;
+        font-size: 80px;
+    }
+}

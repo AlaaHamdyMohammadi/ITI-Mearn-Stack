@@ -1,0 +1,350 @@
+// body{
+//     background-color: aquamarine;
+// }
+
+// $fontColor: lightcoral;
+
+// @mixin style{
+//     font-size: 25px;
+//     text-align: center;
+//     border: 1px solid brown;
+// }
+// @mixin borderStyle($style, $color){
+//     border: 2px $style $color;
+// }
+
+// .header1{
+//     @include style;
+//     color: $fontColor;
+// }
+// .header2{
+//     @include borderStyle(dotted, gray);
+//     color: $fontColor;
+// }
+// .para{
+//     @include style;
+//     color: $fontColor;
+// }
+
+// nav{
+//     ul{
+//         margin: 0;
+//         padding: 10px;
+//         list-style: none;
+//         display: flex;
+
+//         li{
+//             a{
+//             color: $fontColor;
+//             text-decoration: none;
+//             font-weight: bold;
+//             font-size: 25px;
+//             }
+
+//              a:hover{
+//                 color: black;
+//             }
+//         }
+//     }
+
+// }
+
+// *{
+//     margin: 0;
+//     padding: 0;
+//     box-sizing: border-box;
+// }
+
+// $backGround1: #45aaf2;
+// $backGround2: #fa8231;
+// $backGround3: #0fb9b1;
+// $backGround4: #4b6584;
+// $margin: 20px;
+// @mixin styleContent{
+//     display: flex;
+//     margin-top: $margin;
+//     font-size: 20px;
+// }
+
+// .col-1{width: 6.25%;}
+// .col-2{width: 12.5%;}
+// .col-3{width: 18.75%;}
+// .col-4{width: 25%;}
+// .col-5{width: 31.25%;}
+// .col-6{width: 37.5%;}
+// .col-7{width: 43.75%;}
+// .col-8{width: 50%;}
+// .col-9{width: 56.25%;}
+// .col-10{width: 62.5%;}
+// .col-11{width: 68.75%;}
+// .col-12{width: 75%;}
+// .col-13{width: 81.25%;}
+// .col-14{width: 87.5%;}
+// .col-15{width: 93.75%;}
+// .col-16{
+//     width: 100%;
+//     margin-top: $margin;
+//     padding: 10px;
+// }
+// .main{
+//     text-align: center;
+//     margin: $margin;
+
+//     .content img{
+//     max-width: 200px;
+//     border-radius: 50%;
+//     }
+
+//     @media (max-width: 768px) and (max-width: 1023px){
+//         .content img{
+//             content: url(./team-04.png);
+//         }
+//     }
+
+//     .content h3{
+//         font-size: 7vh;
+//     }
+
+//     .education{
+//     background-color: $backGround1;
+//     }
+
+//     .achievements{
+//         background-color: $backGround2;
+//     }
+
+//     .work{
+//         background-color: $backGround3;
+//     }
+
+//     .education-content{
+//     @include styleContent;
+//     }
+//     .achievement-content{
+//         @include styleContent;
+//     }
+//     .work-content{
+//         @include styleContent;
+//     }
+//     .footer{
+//         @include styleContent;
+//         padding: 20px;
+//         background-color: $backGround4;
+//     }
+// }
+
+// .main2{
+//     margin-top: $margin;
+//     font-size: 20px;
+// }
+// .main2 nav{
+//     display: flex;
+//     justify-content: center;
+//     padding: 10px;
+// }
+// .main2 nav ul{
+//     display: flex;
+//     justify-content: space-between;
+// }
+
+// .main2 nav ul li{
+//    padding-left: 20px;
+// }
+
+// .section{
+//     text-align: center;
+//     margin-top: $margin;
+// }
+// .span{
+//     display: flex;
+//     margin-top: $margin;
+// }
+// .span .col-5, .span2 .col-7{
+//     border: 1px solid black;
+//     margin: 5% 3%;
+//     padding: 3%;
+// }
+
+// $colors: black green lightcoral lightblue lightgray blue;
+
+// @for $i from 1 through 6{
+//     li:nth-child(#{$i}){
+//         color: nth($colors, $i );
+//     }
+// }
+
+// $sizes: 20px 25px 30px 35px 40px;
+// $i: 1;
+// @while $i <= 5 {
+//     .test#{$i}{
+//         font-size: nth($sizes, $i)
+//     }
+//     $i: $i+1;
+// }
+
+// $total: 12;
+// @function column-width($columnNum){
+//     @return percentage($columnNum / $total);
+// }
+// @for $i from 1 through $total{
+//     .col-#{$i}{
+//         width: column-width($i);
+//     }
+// }
+
+// @mixin mediaQuery($breakpoint){
+//     @media screen and (max-width: $breakpoint){
+//         @content;
+//     }
+// }
+// @include mediaQuery(768px){
+//     body{
+//         background-color: lightcoral;
+//     }
+//     .head{
+//         color: white;
+//     }
+// }
+
+// $color: black;
+// $darkenColor: darken($color, 20%);
+// //round, floor, ceil to numbers
+// .head{
+//     color: $darkenColor;
+// }
+
+$grid-col: 16;
+@function column-width($columnNum) {
+  @return percentage($columnNum / $grid-col);
+}
+@for $i from 1 through $grid-col {
+  .col-#{$i} {
+    width: column-width($i);
+  }
+}
+$basicColor: white;
+$margin: 20px;
+$color: black;
+$lightColor: lighten($color, 50%);
+$backgroundColor: lighten($color, 90%);
+
+@mixin styleButtons {
+  padding: 10px;
+  color: $basicColor;
+  font-weight: bold;
+  border: none;
+}
+@mixin styleContent {
+  margin-top: $margin;
+  background-color: #4b6584;
+  color: $basicColor;
+}
+
+.container {
+  .links ul {
+    display: flex;
+  }
+
+  .sass_layout {
+    text-align: center;
+    background-color: black;
+    color: $basicColor;
+    padding: 10px;
+
+    button {
+      @include styleButtons;
+      background-color: $lightColor;
+    }
+  }
+  .section {
+    display: flex;
+    margin-top: 0px;
+    text-align: center;
+    justify-content: space-between;
+    align-items: center;
+    background-color: $backgroundColor;
+    height: 70vh;
+  }
+  .section .aside1 {
+    font-size: 25px;
+  }
+  .section button {
+    @include styleButtons;
+    background-color: black;
+  }
+  .header {
+    @include styleContent;
+
+    h2 {
+      padding: 15px;
+    }
+  }
+  .hedear-content {
+    padding: 15px;
+  }
+  .footer {
+    @include styleContent;
+
+    h2,
+    p {
+      padding: 15px;
+    }
+  }
+}
+
+.container-BEM{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.card{
+    background-color: $backgroundColor;
+    padding: 20px;
+}
+
+@mixin cards{
+    padding: 3px;
+    color: $basicColor;
+}
+
+.card .card__content h4{
+    color: $lightColor;
+}
+
+.card--ThemeBlue .card__header, .card__next__one{
+    @include cards;
+    background-color: #3867d6;
+    
+}
+
+.card .card__content{
+    border-top: 1px solid gray;
+}
+
+.card--ThemeBlack .card__header, .card__next__two{
+    @include cards;
+    background-color: black;
+}
+
+@mixin media($breakpoint){
+    @media(max-width: $breakpoint){
+        @content;
+    }
+}
+
+@include media(768px){
+    .links{
+        display: none;
+    }
+    .section .aside2 img{
+        width: 250px !important;
+    }
+    .container-BEM{
+        flex-direction: column;
+    }
+    .card{
+        width: 80%;
+        margin: 10px;
+    }
+}
