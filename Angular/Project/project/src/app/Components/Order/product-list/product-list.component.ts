@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ICategory } from 'src/app/Models/icategory';
 import { IProduct } from 'src/app/Models/iproduct';
 
 @Component({
@@ -7,9 +8,21 @@ import { IProduct } from 'src/app/Models/iproduct';
   styleUrls: ['./product-list.component.scss']
 })
 export class ProductListComponent {
-  prdList: IProduct[];
+  catList:ICategory[];
+  prdList:IProduct[];
   orderTotalPrice: number = 0;
   constructor(){
+    this.catList = [
+      {
+        id:1, name: 'Laptops'
+      },
+      {
+        id:2, name: 'Tablets'
+      },
+      {
+        id:3, name: 'Mobiles'
+      }
+    ]
     this.prdList = [
       {
         id: 100,

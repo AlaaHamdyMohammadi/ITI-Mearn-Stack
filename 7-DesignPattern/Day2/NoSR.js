@@ -1,0 +1,4 @@
+class Employee{
+    makeIntrview(){}
+    calculateSalary(){}
+}
