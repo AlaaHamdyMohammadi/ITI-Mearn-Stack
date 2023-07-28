@@ -1,0 +1,31 @@
+ 1:1
+one to one 
+
+1-must : must
+
+take the primary key from anyone put it in the other one
+
+2- must : may
+
+take the primary key from may side and put it in the must side
+
+3-may : may 
+
+new table
+
+----------------------------------------------------------
+1:M
+one to many
+
+1- (must) in the many side
+
+take the primary key from the one and put it in the many side
+
+2- (may) in the many side
+new table
+
+------------------------------------------------------------
+m:m
+many to many
+
+new table

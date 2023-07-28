@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Udemy</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css"
+      integrity="sha512-t4GWSVZO1eC8BM339Xd7Uphw5s17a86tIZIj8qRxhnKub6WoyhnrxeCIMeAqBPgdZGlCcG2PrZjMc+Wr78+5Xg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"
+      integrity="sha512-fD9DI5bZwQxOi7MhYWnnNPlvXdp/2Pj3XSTRrFs5FQa4mizyGLnJcN6tuvUS6LbmgN1ut+XGSABKvjN0H6Aoow=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.min.js"
+      integrity="sha512-3dZ9wIrMMij8rOH7X3kLfXAzwtcHpuYpEgQg1OA4QAob1e81H8ntUQmQm3pBudqIoySO5j0tHN4ENzA6+n2r4w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+</head>
+<body>
+    <!-- <h1 class="fs-2">Alaa</h1> -->
+    <!-- <img src="https://www.udemy.com/staticx/udemy/images/v7/logo-udemy.svg" alt="Udemy" width="91" height="34" loading="lazy"> -->
+
+    <!-- <header>
+      <nav id="myNav" class="navbar navbar-expand-lg  bg-light">
+        <div class="container-fluid">
+            <img src="https://www.udemy.com/staticx/udemy/images/v7/logo-udemy.svg" alt="Udemy" width="91" height="34" loading="lazy">
+            <p class="pt-2">Categories</p>
+          <form class="d-flex signIn" style="width: 60%">
+              <i class="pt-2 fa-solid fa-magnifying-glass"></i>
+              <input
+              class="form-control me-2 inpt-search"
+              type="search"
+              placeholder="Search for anything"
+              aria-label="Search"
+            />
+            <div id="dropdown" class="dropdown-content"></div>
+          </form>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item myItems">
+                <a class="nav-link fw-bold open" aria-current="page" href="#"
+                  >Sign In <i class="fa-solid fa-user"></i
+                ></a>
+              </li>
+              <li class="nav-item myItems">
+                <a class="nav-link fw-bold" href="cart.html"
+                  >Cart
+
+                  <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                  <i class="badge badge-success" id="cartIcon"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header> -->
+
+     <nav class="navbar navbar-expand-lg navbar-light bg-white">
+        <a class="navbar-brand mb-3" href="#">
+          <img src="https://www.udemy.com/staticx/udemy/images/v7/logo-udemy.svg" alt="Udemy" width="91" height="34" loading="lazy">
+        </a>
+
+        <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" 
+        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+         aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button> -->
+      
+        <div class="collapse navbar-collapse " id="navbarSupportedContent">
+
+
+          <ul class="navbar-nav mr-auto container-fluid">
+           
+            <!-- <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                     Categories
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </div>
+            </li> -->
+
+            <li class="nav-item col-8">
+                     <form class="form-inline my-2 my-lg-0 inbutton">
+                            <input class="form-control form-control-lg mr-sm-0 col-8 bg-light border-0 "
+                            style="border-radius: 5px 0px 0px 5px" 
+                            type="search" placeholder="Search for Courses" aria-label="Search">
+                             
+                            <button class="btn btn-light btn-lg  my-2 my-sm-0 ml-0 col-2" 
+                          style="border-radius: 0px 5px 5px 0px;"
+                            type="submit"><i class="fas fa-search text-danger "></i></button>
+                        </form>
+                    </li>
+
+          </ul>
+
+           
+                <a class="nav-link btn btn-light  mx-2" href="#"
+                
+                data-toggle="popover" title="Try Udemy for Business"
+                data-placement="bottom"
+                data-trigger="focus"
+                data-content="Get your team access to Udemy’s top 2,500 courses anytime,
+                 anywhere."
+                
+                >Udemy for Business</a>
+                <a class="nav-link btn btn-light  mx-2" href="#">Become an Instructor</a>
+                <a class="nav-link btn btn-light  mx-2 rounded-circle" href="#">  <i class="fas fa-shopping-cart"></i> </a>
+                <a class="nav-link btn btn-outline-dark" href="#">Login</a>
+                <a class="nav-link btn btn-danger mx-2" href="#">Signup</a>
+            
+
+          
+        </div>
+      </nav>
+</body>
+</html>
