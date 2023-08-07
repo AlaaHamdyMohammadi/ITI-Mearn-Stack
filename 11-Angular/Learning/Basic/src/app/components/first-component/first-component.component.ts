@@ -21,4 +21,6 @@ export class FirstComponentComponent {
     console.log(event);
     this.statusName = (<HTMLInputElement>event.target).value;
   }
+
+  username: string = '';
 }
