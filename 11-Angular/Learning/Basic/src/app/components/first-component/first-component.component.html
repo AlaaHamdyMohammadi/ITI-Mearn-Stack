@@ -1,0 +1,9 @@
+<button class="btn btn-primary d-block" [disabled]="!allowNewSave" (click)="onCreateStatus()">Save</button>
+<p>{{allowNewSave}}</p>
+<!-- <p [innerText]="allowNewSave"></p> -->
+<p>{{createStatus}}</p>
+<label for="">StatusName</label>
+<input type="text" class="form-control" (input)="onUpdateStatus($event)">
+<p>{{statusName}}</p>
+<!-- <input type="text" class="form-control" [(ngModel)]="statusName">
+<p>{{statusName}}</p> -->
