@@ -9,18 +9,29 @@ export class FirstComponentComponent {
   allowNewSave = false;
   createStatus = 'No something created !';
   statusName = '';
+  statusCreated = false;
+  status: string = 'offline';
+  username: string = '';
+  user: string = '';
+  serverId:number = 10;
   constructor() {
     setTimeout(() => {
       this.allowNewSave = true;
     }, 2000);
+    this.status = Math.random() > 0.5 ? 'online' : 'offline';
   }
   onCreateStatus() {
+    this.statusCreated = true;
     this.createStatus = `Status was created ! Name is ${this.statusName}`;
   }
   onUpdateStatus(event: any) {
     console.log(event);
     this.statusName = (<HTMLInputElement>event.target).value;
   }
-
-  username: string = '';
+  getServerStatus() {
+    return this.status;
+  }
+  getColor() {
+    return this.status === 'online' ? 'green' : 'red'
+  }
 }

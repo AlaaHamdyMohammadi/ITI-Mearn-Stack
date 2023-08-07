@@ -1,12 +1,15 @@
-<button class="btn btn-primary d-block" [disabled]="!allowNewSave" (click)="onCreateStatus()">Save</button>
-<p>{{allowNewSave}}</p>
+<!-- <p>{{allowNewSave}}</p> -->
 <!-- <p [innerText]="allowNewSave"></p> -->
-<p>{{createStatus}}</p>
+<!-- <p>{{createStatus}}</p> -->
+
 <label for="">StatusName</label>
 <input type="text" class="form-control" (input)="onUpdateStatus($event)">
-<p>{{statusName}}</p>
-<!-- <input type="text" class="form-control" [(ngModel)]="statusName">
-<p>{{statusName}}</p> -->
+<button class="btn btn-primary d-block" [disabled]="!allowNewSave" (click)="onCreateStatus()">Save</button>
+
+<p *ngIf="statusCreated; else status">Status was created, the name is {{statusName}}</p>
+<ng-template #status>
+  <p>Status wasn't created</p>
+</ng-template>
 
 <hr>
 
@@ -16,3 +19,11 @@
 <input type="text" class="form-control" [(ngModel)] = "username">
 <p>{{username}}</p>
 <button class="btn btn-primary" [disabled]="username === ''" (click)="username = ''">Reset User</button>
+
+<h1>Task</h1>
+<label for="">User</label>
+<input type="text" class="form-control" [(ngModel)] = "user">
+<p>{{user}}</p>
+<button class="btn btn-danger" [disabled]="user === ''" (click)="user = ''">Reset</button>
+
+<p [ngStyle]="{backgroundColor: getColor()}">{{'Server'}} with ID {{serverId}} is {{getServerStatus()}}</p>
