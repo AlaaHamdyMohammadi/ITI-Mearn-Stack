@@ -3,7 +3,12 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-first-component',
   templateUrl: './first-component.component.html',
-  styleUrls: ['./first-component.component.css'],
+  // styleUrls: ['./first-component.component.css'],
+  styles: [`
+    .online{
+      color: white;
+    }
+  `]
 })
 export class FirstComponentComponent {
   allowNewSave = false;
@@ -14,6 +19,8 @@ export class FirstComponentComponent {
   username: string = '';
   user: string = '';
   serverId:number = 10;
+  isParagrahgVisible = false;
+  log: number[] = [];
   constructor() {
     setTimeout(() => {
       this.allowNewSave = true;
@@ -33,5 +40,9 @@ export class FirstComponentComponent {
   }
   getColor() {
     return this.status === 'online' ? 'green' : 'red'
+  }
+  onToggleDetails(){
+    this.isParagrahgVisible =! this.isParagrahgVisible;
+    this.log.push(this.log.length + 1);
   }
 }
