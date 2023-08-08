@@ -1,6 +1,45 @@
-<h1>{{details.name}}</h1>
+<!-- <h1>{{details.name}}</h1>
 <ul>
   <li *ngFor="let detail of details.branches">{{detail}}</li>
 </ul>
-<img src="{{details.logo}}" alt="">
+*ngIf="isVisible"
+ [class.text-danger]="item.price > 500"
 
+<img src="{{details.logo}}" alt=""> -->
+
+
+<!-- <div class="row mb-5">
+  <div class="col-md-2">Filter by:</div>
+  <div class="col-md-10">
+    <input type="text" class="form-control" [(ngModel)] = 'listFilter'>
+  </div>
+</div> -->
+
+<button class="btn btn-danger" (click)="toggleImg()">Toggle</button>
+
+<div class="row">
+  <div
+    class="col-4 mb-2 p-4"
+    *ngFor="let item of productList"
+    [ngClass]="{ 'item-color': item.price < 2000,  'item-background':item.quantity == 1 }"
+    
+  >
+    <img
+      src="{{ item.productImg }}"
+      class="w-100"
+      alt="imgs"
+      *ngIf="!isVisible"
+    />
+    <p *ngIf="isVisible">Thanks {{ clientName }}</p>
+    <h3 class="fs-5">{{ item.name }}</h3>
+    <p class="fw-bold">Price : {{ item.price }}</p>
+    <p class="fw-bold">Quantity : {{ item.quantity }}</p>
+    <button
+      class="btn btn-primary"
+      [disabled]="item.quantity === 0"
+      (click)="item.quantity = item.quantity - 1"
+    >
+      BUY <i class="fa-solid fa-cart-shopping"></i>
+    </button>
+  </div>
+</div>
