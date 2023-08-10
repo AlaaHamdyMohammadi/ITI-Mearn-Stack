@@ -10,6 +10,9 @@ import { SideMenuComponent } from './components/side-menu/side-menu.component';
 import { HeaderComponent } from './components/header/header.component';
 import { ProductComponent } from './components/product/product.component';
 import { FormsModule } from '@angular/forms';
+import { ImgStyleDirective } from './Directives/img-style.directive';
+import { DiscountPipe } from './Pipes/discount.pipe';
+import { CreditCardPipe } from './Pipes/credit-card.pipe';
 
 @NgModule({
   declarations: [
@@ -19,7 +22,10 @@ import { FormsModule } from '@angular/forms';
     MainComponent,
     SideMenuComponent,
     HeaderComponent,
-    ProductComponent
+    ProductComponent,
+    ImgStyleDirective,
+    DiscountPipe,
+    CreditCardPipe
   ],
   imports: [
     BrowserModule,

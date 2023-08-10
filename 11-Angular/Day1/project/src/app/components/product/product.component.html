@@ -18,22 +18,33 @@
 <button class="btn btn-danger" (click)="toggleImg()">Toggle</button>
 
 <div class="row">
+  <h3 class="text-center">{{date|date}}</h3>
+  <ng-container *ngFor="let item of productList">
   <div
     class="col-4 mb-2 p-4"
-    *ngFor="let item of productList"
+    *ngIf="item.price > 2000"
     [ngClass]="{ 'item-color': item.price < 2000,  'item-background':item.quantity == 1 }"
-    
+
   >
     <img
       src="{{ item.productImg }}"
       class="w-100"
       alt="imgs"
       *ngIf="!isVisible"
+      appImgStyle
+      style1= "10px"
     />
     <p *ngIf="isVisible">Thanks {{ clientName }}</p>
-    <h3 class="fs-5">{{ item.name }}</h3>
-    <p class="fw-bold">Price : {{ item.price }}</p>
+    <h3 class="fs-5">{{ item.name|uppercase }}</h3>
+    <p class="fw-bold text-decoration-line-through">Price : {{ item.price|currency }}</p>
+    <p class="fw-bold">Price : {{ item.price|discount:70|currency }}</p>
     <p class="fw-bold">Quantity : {{ item.quantity }}</p>
+    <ng-container [ngSwitch]="item.quantity">
+      <p class="fw-bold text-danger fs-5" *ngSwitchCase="0">Out of stock</p>
+      <p class="fw-bold text-danger fs-5" *ngSwitchCase="1">Last one item</p>
+      <p class="fw-bold text-primary fs-5" *ngSwitchCase="2">Last two items</p>
+      <p class="fw-bold text-success fs-5" *ngSwitchCase="5">In stock</p>
+    </ng-container>
     <button
       class="btn btn-primary"
       [disabled]="item.quantity === 0"
@@ -42,4 +53,7 @@
       BUY <i class="fa-solid fa-cart-shopping"></i>
     </button>
   </div>
+  </ng-container>
+  <hr>
+  <h1 class="text-center">Credit card : {{creditCard|creditCard}}</h1>
 </div>

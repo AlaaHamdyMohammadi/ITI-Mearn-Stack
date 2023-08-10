@@ -25,6 +25,7 @@ export class ProductComponent {
   productList: Iproduct[];
   isVisible: boolean = false;
   user: string = '';
+  creditCard: string = '1234123412341234'
 
   constructor() {
     this.productList = [
@@ -33,7 +34,7 @@ export class ProductComponent {
         name: 'Meadow Wooden Top Side Table',
         quantity: 0,
         price: 1000,
-        categoryID: 'table',
+        categoryID: 1,
         Material: 'Mirror',
         productImg:
           'https://media.homecentre.com/i/homecentre/163906878-163906878-HC13042022_01-2100.jpg?fmt=auto&$quality-standard$&sm=c&$prodimg-d-sqr-pdp-2x$',
@@ -43,7 +44,7 @@ export class ProductComponent {
         name: 'Octon Nesting Tables - Set of 2',
         quantity: 1,
         price: 2000,
-        categoryID: 'table',
+        categoryID: 1,
         Material: 'Mirror',
         productImg:
           'https://media.homecentre.com/i/homecentre/162121654-162121654-HC161219_01-2100.jpg?fmt=auto&$quality-standard$&sm=c&$prodimg-d-sqr-pdp-2x$',
@@ -53,7 +54,7 @@ export class ProductComponent {
         name: 'Lunar Marble Top Side Table',
         quantity: 0,
         price: 3000,
-        categoryID: 'table',
+        categoryID: 1,
         Material: 'Mirror',
         productImg:
           'https://media.homecentre.com/i/homecentre/159643899-159643899-HCB1129SEP17_01-2100.jpg?fmt=auto&$quality-standard$&sm=c&$prodimg-d-sqr-pdp-2x$',
@@ -61,9 +62,9 @@ export class ProductComponent {
       {
         id: 4,
         name: 'Braydon Dining Chair',
-        quantity: 5,
+        quantity: 2,
         price: 4000,
-        categoryID: 'chair',
+        categoryID: 2,
         Material: 'Mirror',
         productImg:
           'https://media.homecentre.com/i/homecentre/163423425-163423425-HC17052021_01-2100.jpg?fmt=auto&$quality-standard$&sm=c&$prodimg-d-sqr-pdp-2x$',
@@ -73,7 +74,7 @@ export class ProductComponent {
         name: 'Ventura Fabric Dining Chair',
         quantity: 0,
         price: 5000,
-        categoryID: 'chair',
+        categoryID: 2,
         Material: 'Mirror',
         productImg:
           'https://media.homecentre.com/i/homecentre/161257427-161257427-HC280119_01-2100.jpg?fmt=auto&$quality-standard$&sm=c&$prodimg-d-sqr-pdp-2x$',
@@ -83,7 +84,7 @@ export class ProductComponent {
         name: 'Ananke Fabric Dining Chair',
         quantity: 1,
         price: 6000,
-        categoryID: 'chair',
+        categoryID: 2,
         Material: 'Mirror',
         productImg:
           'https://media.homecentre.com/i/homecentre/159182522-159182522-HCB908APR17_02-2100.jpg?fmt=auto&$quality-standard$&sm=c&$prodimg-d-sqr-pdp-2x$',
@@ -91,9 +92,9 @@ export class ProductComponent {
       {
         id: 7,
         name: 'Akara TV Unit',
-        quantity: 0,
+        quantity: 5,
         price: 7000,
-        categoryID: 'tv',
+        categoryID: 3,
         Material: 'Mirror',
         productImg:
           'https://media.homecentre.com/i/homecentre/165358425-165358425-HC10022023_01-2100.jpg?fmt=auto&$quality-standard$&sm=c&$prodimg-d-sqr-pdp-2x$',
@@ -101,9 +102,9 @@ export class ProductComponent {
       {
         id: 8,
         name: 'Coby Extendable TV Unit',
-        quantity: 5,
+        quantity: 2,
         price: 8000,
-        categoryID: 'tv',
+        categoryID: 3,
         Material: 'Mirror',
         productImg:
           'https://media.homecentre.com/i/homecentre/163723189-163568026-HC16082021_01-2100.jpg?fmt=auto&$quality-standard$&sm=c&$prodimg-d-sqr-pdp-2x$',
@@ -113,7 +114,7 @@ export class ProductComponent {
         name: 'Dublin Wall Unit',
         quantity: 1,
         price: 9000,
-        categoryID: 'tv',
+        categoryID: 3,
         Material: 'Mirror',
         productImg:
           'https://media.homecentre.com/i/homecentre/155418292-155418292-HC020518_01-2100.jpg?fmt=auto&$quality-standard$&sm=c&$prodimg-d-sqr-pdp-2x$',
@@ -124,9 +125,7 @@ export class ProductComponent {
     this.isVisible = !this.isVisible;
   }
 
-  decreaseQuentity() {
-    this.productList
-  }
+  date: Date = new Date();
 
 
 
