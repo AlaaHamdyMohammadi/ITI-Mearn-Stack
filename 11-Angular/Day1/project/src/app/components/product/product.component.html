@@ -17,12 +17,19 @@
 
 <button class="btn btn-danger" (click)="toggleImg()">Toggle</button>
 
+<!-- <select class="form-select" aria-label="Default select example" [(ngModel)]="listFilter">
+  <option value="1">Tebles</option>
+  <option value="2">Chairs</option>
+  <option value="3">TVs</option>
+</select> -->
+
+<!-- *ngIf="item.price > 2000" -->
 <div class="row">
   <h3 class="text-center">{{date|date}}</h3>
-  <ng-container *ngFor="let item of productList">
+  <ng-container *ngFor="let item of filterProd">
   <div
     class="col-4 mb-2 p-4"
-    *ngIf="item.price > 2000"
+
     [ngClass]="{ 'item-color': item.price < 2000,  'item-background':item.quantity == 1 }"
 
   >
@@ -38,22 +45,30 @@
     <h3 class="fs-5">{{ item.name|uppercase }}</h3>
     <p class="fw-bold text-decoration-line-through">Price : {{ item.price|currency }}</p>
     <p class="fw-bold">Price : {{ item.price|discount:70|currency }}</p>
-    <p class="fw-bold">Quantity : {{ item.quantity }}</p>
+    <!-- <p class="fw-bold">Quantity : {{ item.quantity }}</p>
     <ng-container [ngSwitch]="item.quantity">
       <p class="fw-bold text-danger fs-5" *ngSwitchCase="0">Out of stock</p>
       <p class="fw-bold text-danger fs-5" *ngSwitchCase="1">Last one item</p>
       <p class="fw-bold text-primary fs-5" *ngSwitchCase="2">Last two items</p>
       <p class="fw-bold text-success fs-5" *ngSwitchCase="5">In stock</p>
-    </ng-container>
-    <button
+    </ng-container> -->
+    <!-- <button
       class="btn btn-primary"
       [disabled]="item.quantity === 0"
       (click)="item.quantity = item.quantity - 1"
     >
       BUY <i class="fa-solid fa-cart-shopping"></i>
+    </button> -->
+    <button
+      class="btn btn-primary"
+      [disabled]="item.quantity === 0"
+      (click)="addToCart(item)"
+    >
+      BUY <i class="fa-solid fa-cart-shopping"></i>
     </button>
+
   </div>
   </ng-container>
   <hr>
-  <h1 class="text-center">Credit card : {{creditCard|creditCard}}</h1>
+  <!-- <h1 class="text-center">Credit card : {{creditCard|creditCard}}</h1> -->
 </div>

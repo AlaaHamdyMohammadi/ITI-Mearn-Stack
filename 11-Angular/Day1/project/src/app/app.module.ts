@@ -13,6 +13,9 @@ import { FormsModule } from '@angular/forms';
 import { ImgStyleDirective } from './Directives/img-style.directive';
 import { DiscountPipe } from './Pipes/discount.pipe';
 import { CreditCardPipe } from './Pipes/credit-card.pipe';
+import { ProductsParentComponent } from './components/products-parent/products-parent.component';
+import { AboutusComponent } from './components/aboutus/aboutus.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +28,10 @@ import { CreditCardPipe } from './Pipes/credit-card.pipe';
     ProductComponent,
     ImgStyleDirective,
     DiscountPipe,
-    CreditCardPipe
+    CreditCardPipe,
+    ProductsParentComponent,
+    AboutusComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,

@@ -6,4 +6,5 @@ export interface Iproduct {
   categoryID: number,
   Material:string,
   productImg?:string,
+  total ?:number,
 }

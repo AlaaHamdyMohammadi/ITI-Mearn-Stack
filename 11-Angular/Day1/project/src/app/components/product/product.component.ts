@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { ProductDetails } from 'src/app/Models/product-details';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Iproduct } from 'src/app/Models/iproduct';
 
 @Component({
@@ -7,13 +6,13 @@ import { Iproduct } from 'src/app/Models/iproduct';
   templateUrl: './product.component.html',
   styleUrls: ['./product.component.scss'],
 })
-export class ProductComponent {
+export class ProductComponent implements OnInit{
   // details: ProductDetails = new ProductDetails(
   //   'STORE',
   //   ['Clothes', 'Shoes'],
   //   './assets/course-01.jpg'
   // );
-  //filterProd: Iproduct[] = [];
+  // filterProd: Iproduct[] = [];
 
   //set as property in ngModel
   // set listFilter(value: string) {
@@ -25,7 +24,7 @@ export class ProductComponent {
   productList: Iproduct[];
   isVisible: boolean = false;
   user: string = '';
-  creditCard: string = '1234123412341234'
+  creditCard: string = '1234123412341234';
 
   constructor() {
     this.productList = [
@@ -127,40 +126,61 @@ export class ProductComponent {
 
   date: Date = new Date();
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  /*
-  // ngOnInit(): void {
-  //   this.filterProd = this.productList;
+  // set listFilter(value: number) {
+  //   this.filterProd = this.filtration(value);
   // }
+  // ngOnInit(): void {
+  //   this.filterProd = Array.from(this.productList);
+  // }
+  /*
+  ngOnInit(): void {
+    this.filterProd = this.productList;
+  }
 
-  // filteration(element: string): Iproduct[] {
-  //   element = element.toLowerCase();
-  //   return this.productList.filter((el) => {
-  //     el.name.toLowerCase().includes(element);
+  filteration(element: string): Iproduct[] {
+    element = element.toLowerCase();
+    return this.productList.filter((el) => {
+      el.name.toLowerCase().includes(element);
+    });
+  }
+  */
+
+  // filtration(value: number): Iproduct[] {
+  //   return this.productList.filter((product: Iproduct) => {
+  //     product.categoryID === value;
   //   });
   // }
-  */
+
+  //-----------------------------
+
+
+  //--------------------------------------------
+
+  filterProd: Iproduct[] = [];
+
+  @Input() set listFilterProp(value: any) {
+    this.filterProd = this.filteration(value);
+  }
+
+  ngOnInit(): void {
+    this.filterProd = Array.from(this.productList);
+  }
+
+  filteration(element: any): Iproduct[] {
+    return this.productList.filter((el: Iproduct) =>
+      el.price <= element
+    );
+  // filteration(element: string): Iproduct[] {
+  //   element = element.toLowerCase();
+  //   return this.productList.filter((el: Iproduct) =>
+  //     el.name.toLowerCase().includes(element)
+  //   );
+  }
+
+  @Output() customEvent = new EventEmitter<Iproduct>();
+
+  addToCart(value: Iproduct) {
+    this.customEvent.emit(value);
+  }
+
 }

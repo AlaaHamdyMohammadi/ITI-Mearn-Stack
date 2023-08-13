@@ -1,13 +1,25 @@
-import { Directive, ElementRef, HostListener, Input } from '@angular/core';
+import {
+  Directive,
+  ElementRef,
+  HostListener,
+  Input,
+  OnChanges,
+  SimpleChanges,
+} from '@angular/core';
 
 @Directive({
   selector: '[appImgStyle]'
 })
-export class ImgStyleDirective {
+export class ImgStyleDirective implements OnChanges{
   @Input() style1: string = '30px';
   @Input() style2: string = '10px';
   constructor(private element: ElementRef) {
-    this.element.nativeElement.style.borderRadius = '25px';
+    //this.element.nativeElement.style.borderRadius = '25px';
+  }
+  ngOnChanges(){
+    //with initial data
+    this.element.nativeElement.style.borderRadius = `${this.style2}`;
+    this.element.nativeElement.style.opacity = 0.7;
   }
   @HostListener('mouseover') onOverfunc () {
     // this.element.nativeElement.style.borderRadius = '60px';
