@@ -16,6 +16,8 @@ import { CreditCardPipe } from './Pipes/credit-card.pipe';
 import { ProductsParentComponent } from './components/products-parent/products-parent.component';
 import { AboutusComponent } from './components/aboutus/aboutus.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
+import { ProductDetailsComponent } from './components/product-details/product-details.component';
+import { AllRoutesComponent } from './components/all-routes/all-routes.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,9 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
     CreditCardPipe,
     ProductsParentComponent,
     AboutusComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    ProductDetailsComponent,
+    AllRoutesComponent
   ],
   imports: [
     BrowserModule,
