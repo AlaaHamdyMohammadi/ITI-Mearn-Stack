@@ -1,0 +1,127 @@
+function Movie({favMovie}) {
+  const [movies, setMovies] = useState([]);
+  const [page, setPage] = useState(1);
+  const loader = useSelector((state) => state.loader.loader);
+
+  const favoriteMovie = useSelector((state) => state.favorites.favorites);
+  const favorite = favoriteMovie.find((mov) => mov.id == favMovie.id);
+
+  const dispatch = useDispatch();
+  // const dispatchIcon = useDispatch();
+
+  useEffect(
+    function () {
+      async function getMovies() {
+        dispatch(changeLoader(true));
+        const res = await axiosInstance.get(
+          `/popular?api_key=${api_key}&page=${page}`
+        );
+        setMovies(res.data.results);
+        dispatch(changeLoader(false));
+      }
+      getMovies();
+    },
+    [page, dispatch]
+  );
+
+  {
+    /* useEffect(function () {
+    dispatch(changeLoader(true));
+    axiosInstance
+      .get(`/popular?api_key=${api_key}&page=${page}`)
+      .then((res) => setMovies(res.data.results))
+      .catch((err) => {
+        console.log(err);
+      });
+      
+  }, [page, dispatch]);*/
+  }
+
+  function handlePrev() {
+    setPage(page - 1);
+  }
+
+  function handleNext() {
+    setPage(page + 1);
+  }
+  //"🖤" ? "❤" : "🖤"
+  function handleIcon() {
+    if(favorite){
+      dispatch(removeFavorite(favMovie.id));
+    }else{
+      dispatch(addFavorite(favMovie));
+
+    }
+  }
+
+  // function handleStar(){
+  //   dispatchIcon(
+  //     changeFavorites(
+  //       favorites == <AiOutlineStar /> ? <AiFillStar /> : <AiOutlineStar />
+  //     )
+  //   );
+  // }
+
+  return (
+    <div className="container-fluid">
+      {loader ? (
+        <Spinner
+          animation="border"
+          role="status"
+          className=" align-items-center" 
+        >
+          <span className="visually-hidden">Loading...</span>
+        </Spinner>
+      ) : (
+        <Row xs={1} md={4} className="g-4">
+          {movies.map((movie) => {
+            return (
+              <Col key={movie.id}>
+                <Card className="m-1">
+                  <Card.Img variant="top" />
+                  <Card.Body>
+                    <Card.Img
+                      variant="top"
+                      src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
+                    />
+                    <Card.Title className="text-center mt-2">
+                      {movie.title.length > 25
+                        ? movie.title.slice(0, 20) + "..."
+                        : movie.title}
+                      <AiOutlineStar
+                        className={`${favorite ? "text-dark" : "text-danger"}`}
+                        onClick={handleIcon}
+                      />
+                    </Card.Title>
+                    <Card.Text className="fw-bold text-success">
+                      Release Date : {movie.release_date}
+                    </Card.Text>
+                    <Card.Text className="fw-bold">
+                      Rating: {movie.vote_average} ⭐
+                    </Card.Text>
+                    <Card.Text>
+                      {movie.overview.length > 100
+                        ? movie.overview.slice(0, 100) + "..."
+                        : movie.overview}
+                    </Card.Text>
+                    <Link to={`/movieDetails/${movie.id}`}>
+                      <button className="btn btn-success w-100">Details</button>
+                    </Link>
+                  </Card.Body>
+                </Card>
+              </Col>
+            );
+          })}
+        </Row>
+      )}
+      <div className="text-center m-2 p-2">
+        <button onClick={handlePrev} className="btn btn-danger me-2">
+          ⏮ <AiOutlineStar />
+        </button>
+        <button onClick={handleNext} className="btn btn-success">
+          ⏭ <AiFillStar />
+        </button>
+      </div>
+    </div>
+  );
+}
